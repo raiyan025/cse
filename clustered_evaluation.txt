@@ -1,0 +1,57 @@
+=== Run information ===
+
+Scheme:       weka.clusterers.SimpleKMeans -init 0 -max-candidates 100 -periodic-pruning 10000 -min-density 2.0 -t1 -1.25 -t2 -1.0 -N 4 -A "weka.core.ManhattanDistance -R first-last" -I 500 -num-slots 1 -S 10
+Relation:     transactions-weka.filters.unsupervised.attribute.MathExpression-E1.2*A-R1,3-5-weka.filters.unsupervised.instance.Randomize-S42-weka.filters.unsupervised.attribute.Discretize-B3-M-1.0-R1-4-precision6
+Instances:    30
+Attributes:   5
+              battery_life
+              screen_usage
+              app_downloads
+              data_consumed
+              device_category
+Test mode:    evaluate on training data
+
+
+=== Clustering model (full training set) ===
+
+
+kMeans
+======
+
+Number of iterations: 3
+Sum of within cluster distances: 39.0
+
+Initial starting points (random):
+
+Cluster 0: '\'(15.27-29.49]\'','\'(-inf-28.52]\'','\'(-inf-22.833333]\'','\'(-inf-33.4]\'',budget
+Cluster 1: '\'(-inf-15.27]\'','\'(28.52-54.52]\'','\'(-inf-22.833333]\'','\'(-inf-33.4]\'',budget
+Cluster 2: '\'(-inf-15.27]\'','\'(-inf-28.52]\'','\'(22.833333-44.566667]\'','\'(-inf-33.4]\'',premium
+Cluster 3: '\'(-inf-15.27]\'','\'(-inf-28.52]\'','\'(-inf-22.833333]\'','\'(-inf-33.4]\'',premium
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                                                                  Cluster#
+Attribute                                Full Data                       0                       1                       2                       3
+                                            (30.0)                  (10.0)                   (9.0)                   (5.0)                   (6.0)
+==================================================================================================================================================
+battery_life                        '(-inf-15.27]'         '(15.27-29.49]'           '(29.49-inf)'         '(15.27-29.49]'          '(-inf-15.27]'
+screen_usage                        '(-inf-28.52]'          '(-inf-28.52]'         '(28.52-54.52]'          '(-inf-28.52]'          '(-inf-28.52]'
+app_downloads                   '(-inf-22.833333]'      '(-inf-22.833333]'      '(-inf-22.833333]' '(22.833333-44.566667]'      '(-inf-22.833333]'
+data_consumed                        '(-inf-33.4]'           '(-inf-33.4]'           '(-inf-33.4]'           '(-inf-33.4]'           '(-inf-33.4]'
+device_category                             budget                  budget                  budget                 premium                 premium
+
+
+
+
+Time taken to build model (full training data) : 0 seconds
+
+=== Model and evaluation on training set ===
+
+Clustered Instances
+
+0      10 ( 33%)
+1       9 ( 30%)
+2       5 ( 17%)
+3       6 ( 20%)
+
